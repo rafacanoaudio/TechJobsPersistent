@@ -4,8 +4,8 @@
 
 <form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
     <div class="form-group">
-        <label>Name</label>
-        <input class="form-control" />
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name"/>
         <span></span>
     </div>
 
@@ -19,8 +19,11 @@
     <div class="form-group">
         @foreach (Skill skill in Model.Skills)
         {
-<label>@skill.Name</label>
-                <input type="checkbox" name="selectedSkills" value="@skill.Id" />}
+            <input type="checkbox" name="selectedSkills" value="@skill.Id" />
+            <label>@skill.Name</label>
+            <br />
+         }
+
         <a asp-controller="Skill" asp-action="Add">Add New Skill</a>
     </div>
 

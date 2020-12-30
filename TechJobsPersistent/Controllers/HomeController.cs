@@ -47,7 +47,7 @@ namespace TechJobsPersistent.Controllers
                     Employer = context.Employers.Find(addJobViewModel.EmployerId),
                     EmployerId = addJobViewModel.EmployerId
                    
-            };
+                };
                 foreach (var addedSkill in selectedSkills)
                 {
                     JobSkill currentJobSkill = new JobSkill

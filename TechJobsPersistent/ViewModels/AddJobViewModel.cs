@@ -8,7 +8,7 @@ namespace TechJobsPersistent.ViewModels
 {
     public class AddJobViewModel
     {
-        //[Required(ErrorMessage = "Job is required")]
+        [Required(ErrorMessage = "Job is required")]
         public string Name { get; set; }
 
         public int EmployerId { get; set; }

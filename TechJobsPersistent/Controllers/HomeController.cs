@@ -45,7 +45,6 @@ namespace TechJobsPersistent.Controllers
                 {
                     Name = addJobViewModel.Name,
                     Employer = context.Employers.Find(addJobViewModel.EmployerId),
-                    EmployerId = addJobViewModel.EmployerId
                    
                 };
                 foreach (var addedSkill in selectedSkills)
@@ -66,6 +65,11 @@ namespace TechJobsPersistent.Controllers
 
                 return Redirect("Index");
             }
+
+            List<Employer> employer = context.Employers.ToList();
+            List<Skill> skill = context.Skills.ToList();
+            addJobViewModel = new AddJobViewModel(employer, skill);
+
 
             return View("AddJob", addJobViewModel);
         }
